@@ -1,0 +1,39 @@
+---
+service_type: host
+addr: 10.62.62.50
+hostname: virt-go-u20-50
+labels:
+  - _admin
+  - mon
+  - mgr
+  - osd
+---
+service_type: host
+addr: 10.62.62.51
+hostname: virt-go-u20-51
+labels:
+  - mon
+  - mgr
+  - osd
+---
+service_type: host
+addr: 10.62.62.52
+hostname: virt-go-u20-52
+labels:
+  - mon
+  - osd
+---
+service_type: mon
+placement:
+  label: "mon"
+---
+service_type: mgr
+placement:
+  label: "mgr"
+---
+service_type: osd
+service_id: default_drive_group
+placement:
+  label: "osd"
+data_devices:
+  all: true
